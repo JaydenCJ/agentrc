@@ -1,0 +1,9 @@
+# Per-project overlay. Placed in a repository root, it merges on top of your
+# global manifest when you run `agentrc sync --project <dir>`.
+mcpServers:
+  # This project does not need the docs server: null removes it here.
+  docs: null
+  # ...but it does need a local database server.
+  local-db:
+    command: npx
+    args: ["-y", "mcp-sqlite", "./dev.db"]

@@ -1,0 +1,11 @@
+model = "gpt-5.2-codex"
+
+[mcp_servers.github]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-github"]
+
+[mcp_servers.github.env]
+GITHUB_TOKEN = "ghp_fromcodex"
+
+[mcp_servers.filesystem]
+command = "mcp-filesystem"

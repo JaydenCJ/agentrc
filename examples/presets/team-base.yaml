@@ -1,0 +1,6 @@
+# Shared team preset. Check this into a team repo and reference it from each
+# developer's manifest via `extends:`.
+mcpServers:
+  filesystem:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-filesystem", "."]

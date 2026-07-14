@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "linear": {
+      "url": "https://mcp.linear.app/mcp"
+    },
+    "local": {
+      "command": "node",
+      "args": ["server.js"],
+      "env": { "API_KEY": "cursor-key-1" }
+    }
+  }
+}

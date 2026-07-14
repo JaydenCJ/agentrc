@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="796" viewBox="0 0 960 796" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" xml:space="preserve">
+  <title>agentrc demo: one manifest synced to four AI coding clients (real CLI output)</title>
+  <rect width="960" height="796" rx="10" fill="#161b22"/>
+  <rect width="960" height="36" rx="10" fill="#21262d"/>
+  <rect y="18" width="960" height="18" fill="#21262d"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="42" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="62" cy="18" r="6" fill="#27c93f"/>
+  <text x="480" y="23" font-size="13" fill="#8b949e" text-anchor="middle">agentrc — one manifest, four clients</text>
+  
+  <text x="24" y="64" font-size="14" fill="#7ee787" font-weight="bold">$</text><text x="40" y="64" font-size="14" fill="#e6e6e6" font-weight="bold">cat ~/.agentrc/agentrc.yaml</text>
+  <text x="24" y="85" font-size="14" fill="#8fbcbb">version: 1</text>
+  <text x="24" y="106" font-size="14" fill="#8fbcbb">mcpServers:</text>
+  <text x="24" y="127" font-size="14" fill="#8fbcbb">  github:</text>
+  <text x="24" y="148" font-size="14" fill="#8fbcbb">    command: npx</text>
+  <text x="24" y="169" font-size="14" fill="#8fbcbb">    args: [&quot;-y&quot;, &quot;@modelcontextprotocol/server-github&quot;]</text>
+  <text x="24" y="190" font-size="14" fill="#8fbcbb">    env:</text>
+  <text x="24" y="211" font-size="14" fill="#8fbcbb">      GITHUB_PERSONAL_ACCESS_TOKEN: &quot;${secret:GH_MCP_TOKEN}&quot;</text>
+  <text x="24" y="253" font-size="14" fill="#7ee787" font-weight="bold">$</text><text x="40" y="253" font-size="14" fill="#e6e6e6" font-weight="bold">agentrc secret set GH_MCP_TOKEN ghp_yourtoken</text>
+  <text x="24" y="274" font-size="14" fill="#9aa4b2">stored secret &quot;GH_MCP_TOKEN&quot; in file store</text>
+  <text x="24" y="295" font-size="14" fill="#9aa4b2">(plain-file store at &lt;home&gt;/.agentrc/secrets.json, chmod 600; an OS keychain is preferred when available)</text>
+  <text x="24" y="337" font-size="14" fill="#7ee787" font-weight="bold">$</text><text x="40" y="337" font-size="14" fill="#e6e6e6" font-weight="bold">agentrc sync</text>
+  <text x="24" y="358" font-size="14" fill="#9aa4b2">scope: user</text>
+  <text x="24" y="379" font-size="14" fill="#9aa4b2">manifest: ~/.agentrc/agentrc.yaml</text>
+  <text x="24" y="421" font-size="14" fill="#c7a6ff">claude-code</text>
+  <text x="24" y="442" font-size="14" fill="#7ee787">  + ~/.claude.json  (+ mcpServers.github)</text>
+  <text x="24" y="463" font-size="14" fill="#6b7280">  . ~/.claude/settings.json  (nothing to write)</text>
+  <text x="24" y="505" font-size="14" fill="#c7a6ff">codex</text>
+  <text x="24" y="526" font-size="14" fill="#7ee787">  + ~/.codex/config.toml  (+ mcp_servers.github)</text>
+  <text x="24" y="568" font-size="14" fill="#c7a6ff">cursor</text>
+  <text x="24" y="589" font-size="14" fill="#7ee787">  + ~/.cursor/mcp.json  (+ mcpServers.github)</text>
+  <text x="24" y="631" font-size="14" fill="#c7a6ff">gemini-cli</text>
+  <text x="24" y="652" font-size="14" fill="#7ee787">  + ~/.gemini/settings.json  (+ mcpServers.github)</text>
+  <text x="24" y="694" font-size="14" fill="#7ee787">done: 4 created, 0 updated, 1 unchanged, 1 secret(s) resolved</text>
+  <text x="24" y="736" font-size="14" fill="#7ee787" font-weight="bold">$</text><text x="40" y="736" font-size="14" fill="#e6e6e6" font-weight="bold">agentrc status --check &gt;/dev/null &amp;&amp; echo in-sync</text>
+  <text x="24" y="757" font-size="14" fill="#7ee787">in-sync</text>
+</svg>

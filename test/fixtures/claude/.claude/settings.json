@@ -1,0 +1,21 @@
+{
+  "model": "opus",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [{ "type": "command", "command": "./guard.sh", "timeout": 10 }]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [{ "type": "command", "command": "./hello.sh" }]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": ["Bash(npm run *)"],
+    "deny": ["Read(./.env)"],
+    "defaultMode": "acceptEdits"
+  }
+}

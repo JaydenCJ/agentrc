@@ -1,0 +1,15 @@
+{
+  "theme": "Default",
+  "mcpServers": {
+    "docs": {
+      "httpUrl": "https://mcp.example.com/docs"
+    },
+    "events": {
+      "url": "https://mcp.example.com/sse"
+    },
+    "local": {
+      "command": "python",
+      "args": ["-m", "mcp_server"]
+    }
+  }
+}

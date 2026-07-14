@@ -1,0 +1,37 @@
+# Example agentrc manifest used by examples/demo.sh
+# One file describes MCP servers, skills, hooks and permissions for every client.
+version: 1
+
+# Team preset merged underneath this file (root file wins on conflicts).
+extends:
+  - ./presets/team-base.yaml
+
+clients: [claude-code, codex, cursor, gemini-cli]
+
+mcpServers:
+  github:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-github"]
+    env:
+      # Resolved at sync time from env > OS keychain > file store.
+      # The manifest you commit to your dotfiles repo stays credential-free.
+      GITHUB_PERSONAL_ACCESS_TOKEN: "${secret:DEMO_GITHUB_TOKEN}"
+  docs:
+    transport: http
+    url: https://mcp.example.com/docs
+
+skills:
+  code-review:
+    path: ./skills/code-review
+
+hooks:
+  preToolUse:
+    - matcher: Bash
+      command: ./hooks/guard.sh
+      timeout: 10
+
+permissions:
+  allow:
+    - "Bash(npm run test:*)"
+  deny:
+    - "Read(./.env)"
